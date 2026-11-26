@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n>Checkout — SUBSTRATA</title>
+  <meta name="description" content="SUBSTRATA — independent underground art posters. A4 framed prints and PSD files, printed in small numbers in Kobe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+<main id="checkout-root">
+  <div class="checkout">
+    <form class="checkout-main" id="checkout-form" novalidate>
+      <div class="steps"><span class="on" data-i18n>01 Information</span><span data-i18n>02 Shipping</span><span data-i18n>03 Payment</span></div>
+      <div class="mono ember" data-i18n>Secure checkout</div>
+      <h1 class="display d-l" style="margin:12px 0 28px" data-i18n>Almost yours.</h1>
+
+      <div class="mono muted" data-i18n>Express checkout</div>
+      <div class="express"><button type="button">Apple Pay</button><button type="button">Google Pay</button><button type="button">PayPay</button></div>
+      <div class="or" data-i18n>OR</div>
+
+      <fieldset>
+        <legend data-i18n>Contact</legend>
+        <div class="fields">
+          <div class="field full"><label for="email" data-i18n>Email</label><input id="email" type="email" required autocomplete="email" placeholder="you@example.jp"></div>
+        </div>
+        <label class="check"><input type="checkbox" checked> <span data-i18n>SEND ME DROP ALERTS 24H BEFORE PUBLIC RELEASE</span></label>
+      </fieldset>
+
+      <div id="shipping-block">
+        <fieldset>
+          <legend data-i18n>Shipping address</legend>
+          <div class="fields">
+            <div class="field"><label for="last" data-i18n>Last name</label><input id="last" required autocomplete="family-name"></div>
+            <div class="field"><label for="first" data-i18n>First name</label><input id="first" required autocomplete="given-name"></div>
+            <div class="field"><label for="zip" data-i18n>Postal code</label><input id="zip" required pattern="\d{3}-?\d{4}" placeholder="650-0001" autocomplete="postal-code"></div>
+            <div class="field"><label for="pref" data-i18n>Prefecture</label>
+              <select id="pref" required data-pref>
+                <option value="" data-i18n>Select…</option>
+                <option>Hokkaido</option><option>Aomori</option><option>Iwate</option><option>Miyagi</option><option>Akita</option><option>Yamagata</option><option>Fukushima</option><option>Ibaraki</option><option>Tochigi</option><option>Gunma</option><option>Saitama</option><option>Chiba</option><option>Tokyo</option><option>Kanagawa</option><option>Niigata</option><option>Toyama</option><option>Ishikawa</option><option>Fukui</option><option>Yamanashi</option><option>Nagano</option><option>Gifu</option><option>Shizuoka</option><option>Aichi</option><option>Mie</option><option>Shiga</option><option>Kyoto</option><option>Osaka</option><option selected>Hyogo</option><option>Nara</option><option>Wakayama</option><option>Tottori</option><option>Shimane</option><option>Okayama</option><option>Hiroshima</option><option>Yamaguchi</option><option>Tokushima</option><option>Kagawa</option><option>Ehime</option><option>Kochi</option><option>Fukuoka</option><option>Saga</option><option>Nagasaki</option><option>Kumamoto</option><option>Oita</option><option>Miyazaki</option><option>Kagoshima</option><option>Okinawa</option>
+              </select>
+            </div>
+            <div class="field full"><label for="city" data-i18n>City, ward, street</label><input id="city" required autocomplete="address-line1"></div>
+            <div class="field full"><label for="bld" data-i18n>Building, room (optional)</label><input id="bld" autocomplete="address-line2"></div>
+            <div class="field full"><label for="tel" data-i18n>Phone</label><input id="tel" type="tel" required pattern="[0-9\-\+ ]{9,15}" autocomplete="tel" placeholder="090-1234-5678"></div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend data-i18n>Delivery</legend>
+          <div id="ship-options"></div>
+        </fieldset>
+      </div>
+
+      <fieldset>
+        <legend data-i18n>Payment</legend>
+        <div class="fields">
+          <div class="field full"><label for="card" data-i18n>Card number</label><input id="card" required inputmode="numeric" pattern="[\d ]{19}" placeholder="4242 4242 4242 4242" autocomplete="cc-number"></div>
+          <div class="field"><label for="exp" data-i18n>Expiry</label><input id="exp" required pattern="\d{2} / \d{2}" placeholder="MM / YY" autocomplete="cc-exp"></div>
+          <div class="field"><label for="cvc" data-i18n>CVC</label><input id="cvc" required pattern="\d{3,4}" inputmode="numeric" placeholder="123" autocomplete="cc-csc"></div>
+          <div class="field full"><label for="name" data-i18n>Name on card</label><input id="name" required autocomplete="cc-name"></div>
+        </div>
+        <label class="check"><input type="checkbox" checked> <span data-i18n>BILLING ADDRESS SAME AS SHIPPING</span></label>
+      </fieldset>
+
+      <button class="btn btn-ember btn-block" type="submit" style="margin-top:40px"><span id="pay-label" data-i18n>Pay</span><span class="arrow">→</span></button>
+      <p class="small muted" style="margin-top:14px" data-i18n>Demo store — no real payment is taken. By paying you agree to the Terms. Editions are allocated in order of payment; your numbers are confirmed by email within the hour.</p>
+      <p class="mono muted" style="margin-top:40px;font-size:10px"><a href="cart.html" data-i18n>← Back to bag</a> &nbsp;·&nbsp; Returns policy · Privacy · Terms · © 2026 SUBSTRATA</p>
+    </form>
+
+    <aside class="checkout-side">
+      <div class="inner">
+        <h2 class="display d-xs" style="margin:0 0 8px"><span data-i18n>Your editions</span> <span id="side-n"></span></h2>
+        <div id="side-items"></div>
+        <div class="sum-row" style="margin-top:12px"><span data-i18n>Subtotal</span><span class="price" id="t-sub"></span></div>
+        <div class="sum-row"><span data-i18n>Shipping</span><span class="price" id="t-ship"></span></div>
+        <div class="sum-row total"><span class="label" data-i18n>Total — JPY</span><span class="price" id="t-total"></span></div>
+        <div class="small muted" style="text-align:right"><span data-i18n>Includes</span> <span id="t-tax"></span> <span data-i18n>consumption tax (10%)</span></div>
+        <p class="serif serif-m" style="margin:48px 0 8px" data-i18n>“Hang it somewhere it can watch you.”</p>
+        <div class="mono muted" data-i18n>Packed by hand in Kobe</div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

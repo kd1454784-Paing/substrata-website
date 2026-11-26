@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n>All Works — SUBSTRATA</title>
+  <meta name="description" content="SUBSTRATA — independent underground art posters. A4 framed prints and PSD files, printed in small numbers in Kobe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="shop">
+<main>
+  <section class="page-head">
+    <div class="crumbs"><a href="index.html">SUBSTRATA</a> / <span data-i18n>Shop / All works</span></div>
+    <div class="page-head-row">
+      <h1 class="display d-xl"><span data-i18n>All works</span><sup id="count"></sup></h1>
+      <p class="lead fog" style="margin:0" data-i18n>Posters and layered source files. Each released once, numbered by hand, gone when gone.</p>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <div class="chips" id="chips"></div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <select class="select" id="sort" aria-label="Sort">
+        <option value="newest" data-i18n>Sort — Newest ↓</option>
+        <option value="oldest" data-i18n>Sort — Oldest ↑</option>
+        <option value="name" data-i18n>Sort — A → Z</option>
+        <option value="scarce" data-i18n>Sort — Fewest left</option>
+      </select>
+      <select class="select" id="format" aria-label="Format">
+        <option value="all" data-i18n>Format — All</option>
+        <option value="print" data-i18n>Format — Prints in stock</option>
+        <option value="psd" data-i18n>Format — PSD files</option>
+      </select>
+      <div class="view-toggle">
+        <button class="chip" data-view="grid" data-i18n>Grid</button>
+        <button class="chip" data-view="index" data-i18n>Index</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="shop-grid">
+    <div id="results" class="grid cols-4"></div>
+    <div class="mono muted" id="shown" style="margin-top:64px;text-align:center"></div>
+  </section>
+</main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
